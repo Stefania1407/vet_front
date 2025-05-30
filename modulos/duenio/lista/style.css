@@ -39,9 +39,12 @@
     font-size: 0.9rem;
 }
 
+.lista li .acciones {
+    display: flex;
+    gap: 0.5rem;
+}
+
 .lista button {
-    background-color: #2196F3;
-    color: white;
     padding: 0.5rem 1.2rem;
     border: none;
     border-radius: 6px;
@@ -51,6 +54,21 @@
     transition: background-color 0.3s;
 }
 
-.lista button:hover {
+/* Botón azul: Editar */
+.lista .editar-btn {
+    background-color: #2196F3;
+    color: white;
+}
+
+.lista .editar-btn:hover {
     background-color: #0d8ae5;
+}
+
+.lista .eliminar-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.lista .eliminar-btn:hover {
+    background-color: #d32f2f;
 }

@@ -1,4 +1,4 @@
-const id = new URLSearchParams(window.location.search).get('id');
+const id = sessionStorage.getItem('idDuenio');
 
 if (id) {
     fetch(`http://localhost:8080/api/duenios/${id}`)
@@ -49,7 +49,11 @@ document.getElementById('actualizarDuenioForm').addEventListener('submit', funct
         return response.text();
     })
     .then(() => {
-        document.getElementById('mensaje').textContent = 'Dueño actualizado con éxito.';
+        document.getElementById('mensaje').textContent = 'Dueño actualizado con éxito. Serás redirigido a la Lista de Usuarios';
+        sessionStorage.removeItem('idDuenio');
+        setTimeout(() => {
+                window.location.href = '../lista/'; 
+        }, 3000)
     })
     .catch(error => {
         console.error("Error al actualizar el dueño:", error);

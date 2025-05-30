@@ -20,10 +20,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         <h2>${duenio.nombre ?? 'Sin nombre'} ${duenio.apellidos ?? ''}</h2>
                         <p>${duenio.correo ?? 'Correo no registrado'} — ${duenio.telefono ?? 'Teléfono no registrado'}</p>
                     </div>
-                    <button onclick="editarDuenio(${duenio.id_dueño})">Editar</button>
+                    <div class="acciones">
+                        <button class="editar-btn" onclick="editarDuenio(${duenio.id_dueño})">Editar</button>
+                        <button class="eliminar-btn" onclick="eliminarDuenio(${duenio.id_dueño})">Eliminar</button>
+                    </div>
                 `;
                 lista.appendChild(li);
-            });
+            })
         })
         .catch(error => {
             console.error('Error al obtener la lista:', error);
@@ -32,5 +35,23 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function editarDuenio(id) {
-    window.location.href = '../actualizar/index.html?id=' + id;
+    sessionStorage.setItem('idDuenio', id);
+    window.location.href = '../actualizar/';
+}
+
+function eliminarDuenio(id) {
+    const confirmado = confirm("¿Estás seguro que deseas eliminar este dueño?");
+    if (!confirmado) return;
+
+    fetch(`http://localhost:8080/api/duenios/${id}`, {
+        method: 'DELETE'
+    })
+    .then(response => {
+        if (!response.ok) throw new Error("Error al eliminar");
+        location.reload();
+    })
+    .catch(error => {
+        console.error("Error al eliminar:", error);
+        alert("Ocurrió un error al intentar eliminar el dueño.");
+    });
 }
