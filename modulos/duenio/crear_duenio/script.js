@@ -29,6 +29,9 @@ document.getElementById('crearDuenioForm').addEventListener('submit', function (
     .then(data => {
         console.log('Duenio creado:', data);
         alert('¡Dueño creado con éxito!');
+        setTimeout(() => {
+            window.location.href = '../'
+        }, 3000)
     })
     .catch(error => {
         console.error('Error al crear el duenio:', error);
