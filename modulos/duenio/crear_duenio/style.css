@@ -116,3 +116,17 @@ button:hover {
 .btn-volver:hover {
     background-color: #b4cbe5;
 }
+
+.titulo-con-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.titulo-con-logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}

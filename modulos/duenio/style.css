@@ -40,7 +40,7 @@ body {
 
 .menu-btn {
     text-decoration: none;
-    background-color: #A8D5BA; /* Verde pastel */
+    background-color: #A1D7E0; /* Verde pastel */
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 12px;
@@ -50,5 +50,25 @@ body {
 }
 
 .menu-btn:hover {
-    background-color: #92c7a5;
+    background-color: #A1D7E0;
+    transform: translateY(-2px);
+}
+
+.back-arrow {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #d3e0f2;
+    color: #325d88;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.back-arrow:hover {
+    background-color: #b4cbe5;
 }

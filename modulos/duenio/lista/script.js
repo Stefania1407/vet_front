@@ -26,15 +26,27 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                 `;
                 lista.appendChild(li);
-            })
+            });
         })
         .catch(error => {
             console.error('Error al obtener la lista:', error);
             mensaje.textContent = 'No se pudo cargar la lista de dueños.';
+            mensaje.className = 'mensaje-error';
+            mensaje.style.display = 'block';
         });
 });
 
 function editarDuenio(id) {
+    const confirmado = confirm("¿Desea modificar los datos del dueño?");
+    const mensaje = document.getElementById('mensaje');
+
+    if (!confirmado) {
+        mensaje.textContent = "Edición cancelada por el usuario.";
+        mensaje.className = "mensaje-advertencia";
+        mensaje.style.display = 'block';
+        return;
+    }
+
     sessionStorage.setItem('idDuenio', id);
     window.location.href = '../actualizar/';
 }

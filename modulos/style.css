@@ -57,7 +57,7 @@ body {
 
 /* --- Estilo de botón principal --- */
 .menu-btn {
-    background-color: #A8D5BA;
+    background-color: #A1D7E0;
     color: white;
     text-decoration: none;
     padding: 12px 24px; /* Padding estándar */
@@ -69,7 +69,7 @@ body {
 }
 
 .menu-btn:hover {
-    background-color:#A8D5BA;
+    background-color:#A1D7E0;
     transform: translateY(-2px);
 }
 

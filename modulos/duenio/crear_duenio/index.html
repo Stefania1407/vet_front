@@ -9,8 +9,15 @@
 </head>
 
 <body>
+    <a href="/duenio/" class="btn-volver">← Volver</a>
+
     <div class="container">
-        <h1>Registro de Dueño</h1>
+        <!-- Logo junto al título -->
+        <div class="titulo-con-logo">
+            <img src="Captura_de_pantalla_2025-05-02_163357-removebg-preview.png" alt="Logo">
+            <h1>Registro de Dueño</h1>
+        </div>
+
         <form id="crearDuenioForm">
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" placeholder="Ingrese el nombre" required>
@@ -39,22 +46,17 @@
             const telefono = document.getElementById('telefono').value.trim();
             const mensaje = document.getElementById('mensaje');
 
-            // Reset del mensaje
             mensaje.style.display = 'none';
             mensaje.className = '';
 
-            // Validación del teléfono
             if (!/^\d{7,15}$/.test(telefono)) {
                 mostrarMensaje("⚠️ El teléfono debe tener solo números y entre 7 y 15 dígitos.", "mensaje-advertencia");
                 return;
             }
 
-            // Enviar al backend
             fetch('http://localhost:8080/api/duenios', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ nombre, apellidos, correo, telefono })
             })
                 .then(response => {
@@ -74,7 +76,6 @@
                     mostrarMensaje("❌ " + error.message, "mensaje-error");
                 });
 
-            // Mostrar mensaje con estilo
             function mostrarMensaje(texto, clase) {
                 mensaje.textContent = texto;
                 mensaje.className = clase;
