@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
 * {
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background-color: #F1F1F1; /* Gris claro pastel */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,16 +16,20 @@ body {
 }
 
 .menu-container {
-    background: white;
+    background: #FFFFFF;
     padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     text-align: center;
+    width: 100%;
+    max-width: 400px;
 }
 
 .menu-container h1 {
     margin-bottom: 2rem;
-    color: #333;
+    font-size: 32px;
+    color: #A7C6ED; /* Azul pastel */
+    font-weight: 700;
 }
 
 .menu-buttons {
@@ -34,15 +40,15 @@ body {
 
 .menu-btn {
     text-decoration: none;
-    background-color: #4CAF50;
+    background-color: #A8D5BA; /* Verde pastel */
     color: white;
     padding: 0.75rem 1.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
     font-size: 1rem;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .menu-btn:hover {
-    background-color: #388e3c;
+    background-color: #92c7a5;
 }

@@ -1,64 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
 * {
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 body {
-    background-color: #f2f2f2;
     margin: 0;
     padding: 0;
+    background-color: #F1F1F1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .container {
-    max-width: 400px;
-    background-color: white;
-    padding: 2rem;
-    margin: 5vh auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 420px;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 1.5rem;
-    color: #333;
+    margin-bottom: 2rem;
+    color: #A7C6ED;
+    font-size: 32px;
+    font-weight: 700;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
 }
 
 label {
-    margin-top: 1rem;
-    margin-bottom: 0.25rem;
-    color: #555;
+    font-weight: 600;
+    color: #333;
 }
 
 input {
-    padding: 0.5rem;
+    padding: 0.6rem;
+    font-size: 1rem;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #A8D5BA;
+    box-shadow: 0 0 0 2px rgba(168, 213, 186, 0.4);
 }
 
 button {
-    margin-top: 1.5rem;
-    padding: 0.75rem;
-    background-color: #4CAF50;
+    padding: 0.8rem;
+    background-color: #A8D5BA;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #92c7a5;
 }
 
 #mensaje {
+    display: none;
     margin-top: 1rem;
     text-align: center;
     font-weight: bold;
+    font-size: 0.95rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+/* Colores pastel según tipo */
+.mensaje-exito {
+    background-color: #C8E6C9;
+    color: #1B5E20;
+}
+
+.mensaje-error {
+    background-color: #F8B4B4;
+    color: #8B0000;
+}
+
+.mensaje-advertencia {
+    background-color: #FFF4A7;
+    color: #7B6300;
+}
+
+.btn-volver {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #d3e0f2;
+    color: #325d88;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-volver:hover {
+    background-color: #b4cbe5;
 }

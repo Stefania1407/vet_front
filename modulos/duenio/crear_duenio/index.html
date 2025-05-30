@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Registro de Dueño</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
         <h1>Registro de Dueño</h1>
@@ -26,6 +29,59 @@
         <div id="mensaje"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('crearDuenioForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const nombre = document.getElementById('nombre').value.trim();
+            const apellidos = document.getElementById('apellidos').value.trim();
+            const correo = document.getElementById('correo').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const mensaje = document.getElementById('mensaje');
+
+            // Reset del mensaje
+            mensaje.style.display = 'none';
+            mensaje.className = '';
+
+            // Validación del teléfono
+            if (!/^\d{7,15}$/.test(telefono)) {
+                mostrarMensaje("⚠️ El teléfono debe tener solo números y entre 7 y 15 dígitos.", "mensaje-advertencia");
+                return;
+            }
+
+            // Enviar al backend
+            fetch('http://localhost:8080/api/duenios', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nombre, apellidos, correo, telefono })
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        return response.text().then(() => {
+                            throw new Error("No se pudo registrar el dueño. Verifica los datos.");
+                        });
+                    }
+                    return response.json();
+                })
+                .then(() => {
+                    mostrarMensaje("✅ ¡Dueño creado con éxito!", "mensaje-exito");
+                    setTimeout(() => window.location.href = '../', 3000);
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    mostrarMensaje("❌ " + error.message, "mensaje-error");
+                });
+
+            // Mostrar mensaje con estilo
+            function mostrarMensaje(texto, clase) {
+                mensaje.textContent = texto;
+                mensaje.className = clase;
+                mensaje.style.display = 'block';
+            }
+        });
+    </script>
 </body>
+
 </html>

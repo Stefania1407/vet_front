@@ -1,3 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F1F1F1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    color: #A7C6ED;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* Lista de Dueños */
 .lista {
     list-style: none;
     padding: 0;
@@ -10,9 +45,9 @@
     align-items: center;
     padding: 1rem 1.5rem;
     margin-bottom: 1rem;
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-left: 5px solid #4CAF50;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-left: 5px solid #A8D5BA; /* Verde pastel */
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.3s ease;
@@ -24,18 +59,19 @@
 
 .lista li .info {
     flex: 1;
+    text-align: left;
 }
 
 .lista li .info h2 {
     margin: 0;
     font-size: 1.1rem;
     font-weight: bold;
-    color: #333;
+    color: #333333;
 }
 
 .lista li .info p {
     margin: 0.25rem 0 0;
-    color: #666;
+    color: #666666;
     font-size: 0.9rem;
 }
 
@@ -44,31 +80,40 @@
     gap: 0.5rem;
 }
 
+/* Botones de acción */
 .lista button {
-    padding: 0.5rem 1.2rem;
+    padding: 0.5rem 1rem;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     font-size: 0.9rem;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
-/* Botón azul: Editar */
+/* Editar: Azul pastel */
 .lista .editar-btn {
-    background-color: #2196F3;
-    color: white;
+    background-color: #A1D7E0;
+    color: #004D60;
 }
 
 .lista .editar-btn:hover {
-    background-color: #0d8ae5;
+    background-color: #89c9d6;
 }
 
+/* Eliminar: Rojo pastel */
 .lista .eliminar-btn {
-    background-color: #f44336;
-    color: white;
+    background-color: #F8B4B4;
+    color: #8B0000;
 }
 
 .lista .eliminar-btn:hover {
-    background-color: #d32f2f;
+    background-color: #f29c9c;
+}
+
+/* Mensaje */
+#mensaje {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 0.95rem;
 }

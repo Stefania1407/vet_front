@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
 * {
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 body {
-    background-color: #eeeeee;
+    background-color: #F1F1F1;
     margin: 0;
     padding: 0;
     display: flex;
@@ -14,12 +16,12 @@ body {
 }
 
 .container {
-    background-color: #fff;
+    background-color: #FFFFFF;
     width: 100%;
     max-width: 420px;
     padding: 2.5rem;
     margin: 2rem;
-    border-radius: 12px;
+    border-radius: 16px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
 }
@@ -27,9 +29,9 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 2rem;
-    color: #333;
-    font-size: 1.8rem;
-    font-weight: 600;
+    color: #A7C6ED;
+    font-size: 32px;
+    font-weight: 700;
 }
 
 form {
@@ -40,7 +42,7 @@ form {
 
 label {
     font-size: 0.95rem;
-    color: #444;
+    color: #333;
     font-weight: 500;
 }
 
@@ -54,13 +56,13 @@ input {
 
 input:focus {
     outline: none;
-    border-color: #4CAF50;
-    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+    border-color: #A8D5BA;
+    box-shadow: 0 0 0 2px rgba(168, 213, 186, 0.4);
 }
 
 button {
     padding: 0.8rem;
-    background-color: #4CAF50;
+    background-color: #A8D5BA;
     color: white;
     border: none;
     border-radius: 8px;
@@ -71,12 +73,31 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #92c7a5;
 }
 
 #mensaje {
+    display: none;
     margin-top: 1rem;
     text-align: center;
     font-weight: bold;
-    color: #444;
+    font-size: 0.95rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+/* Estados */
+.mensaje-exito {
+    background-color: #C8E6C9;
+    color: #1B5E20;
+}
+
+.mensaje-error {
+    background-color: #F8B4B4;
+    color: #8B0000;
+}
+
+.mensaje-advertencia {
+    background-color: #FFF4A7;
+    color: #7B6300;
 }
